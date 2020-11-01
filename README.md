@@ -1,21 +1,31 @@
 # Purpose of library
 
-Possibility to run Spock's specifications in custom order.
+Possibility to run Spock's specifications in a custom order.
 Order is customized by `OrderingAlgorithm`.
-Default algorithm included in library `RandomOrderingAlgorithm` provides random order. 
+Default algorithm included in a library (`RandomOrderingAlgorithm`) provides random order. 
 
-#Usage 
+# Usage 
 
-##Gradle
 
-1) Build jar
+## Building ordered-spock
 
-2) Add a built jar accordingly to `build.gradle`
+1) Build jar and upload to a local maven repository
+```./gradlew clean build publishToMavenLocal```
+
+
+## Usage ordered-spock in project
+1) Add built jar to `build.gradle`
 ```groovy
-    testImplementation 'com.github.pgagala:ordered-spock:1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+}
+
+
+testImplementation 'com.github.pgagala:ordered-spock:1.0-SNAPSHOT'
 ```
 
-3) Define test engine 
+2) Define a test engine 
 ```groovy
 test {
      useJUnitPlatform() {
@@ -24,7 +34,9 @@ test {
 }
 ```
 
-# Use own `OrderingAlgorithm`
+3) Run tests. Every run `OrderingAlgorithm` affects execution order of specifictions.
+
+## Implementing own `OrderingAlgorithm`
 1) Implement Your own algorithm. For example below implementation will shuffle specifications in alphabetical order.
 Create that class in test scope (default `src/test/groovy`).
 

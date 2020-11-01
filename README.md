@@ -26,7 +26,7 @@ repositories {
 testImplementation 'com.github.pgagala:ordered-spock:1.0-SNAPSHOT'
 ```
 
-2) Define a test engine 
+2) Define a test engine in `build.gradle`
 ```groovy
 test {
      useJUnitPlatform() {
@@ -38,7 +38,8 @@ test {
 3) Run tests. Every run `OrderingAlgorithm` affects execution order of specifictions.
 
 ## Implementing own `OrderingAlgorithm`
-1) Implement Your own algorithm. For example below implementation will shuffle specifications in alphabetical order.
+1) Implementation.
+Example below will shuffle specifications in alphabetical order.
 Create that class in test scope (default `src/test/groovy`).
 
 ```groovy

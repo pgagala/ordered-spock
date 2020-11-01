@@ -1,19 +1,20 @@
 # Purpose of library
 
-Possibility to run Spock's specifications in a custom order.
-Order is customized by `OrderingAlgorithm`.
-Default algorithm included in a library (`RandomOrderingAlgorithm`) provides random order. 
+Makes possible to run Spock's specifications in a custom order.
+Order is defined by `OrderingAlgorithm`.
+Default algorithm included in a library (`RandomOrderingAlgorithm`) provides random order.
+
 
 # Usage 
 
 
-## Building ordered-spock
+## Building `ordered-spock`
 
 1) Build jar and upload to a local maven repository
 ```./gradlew clean build publishToMavenLocal```
 
 
-## Usage ordered-spock in project
+## Usage `ordered-spock` in project
 1) Add built jar to `build.gradle`
 ```groovy
 
